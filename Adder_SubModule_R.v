@@ -1,17 +1,18 @@
-module Adder_SubModule_R (p,g,M,Ci,Co_inverse,P,Q,Y,AequalsB);
+module Adder_SubModule_R (p,g,M,Ci_inverse,Co_inverse,P,Q,Y,AequalsB);
   input [3:0] p;
   input [3:0] g;
-  input Ci,M,Co_inverse;
+  input Ci_inverse,M,Co_inverse;
 
   output P,Q,AequalsB;
   output [3:0] Y;
 
-  wire M_inverse = ~M;
-  wire t1,t2,t3,t4;
+  wire M_inverse;
+  wire [3:0] t;
+
+  assign M_inverse = ~M;
 
   assign P = ~(p[3]&p[2]&p[1]&p[1]);
 
-  // assign t1 = ~(g[3]|(g[2]&p[3])|(g[1]&p[3]&p[2])|(g[0]&p[3]&p[2]&p[1]));
-  // assign t2 =
+  Adder_SubModule_R2 adder_submodule_r2(.Ci_inverse(Ci_inverse));
 
 endmodule // Adder_SubModule_R
