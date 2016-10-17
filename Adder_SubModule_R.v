@@ -11,7 +11,7 @@ module Adder_SubModule_R (p,g,M,Ci,Co_inverse,P,Q,Y,AequalsB);
 
   assign P = ~(p[3]&p[2]&p[1]&p[1]);
 
-  assign t1 = ~(g[3]|(g[2]&p[3])|(g[1]&p[3]&p[2])|(g[0]&p[3]&p[2]&p[1]));
-  assign t2 = 
+  // assign t1 = ~(g[3]|(g[2]&p[3])|(g[1]&p[3]&p[2])|(g[0]&p[3]&p[2]&p[1]));
+  // assign t2 =
 
 endmodule // Adder_SubModule_R
