@@ -1,3 +1,0 @@
-module Adder ();
-  
-endmodule // Adder
