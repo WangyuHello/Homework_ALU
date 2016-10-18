@@ -1,4 +1,4 @@
-module Adder_SubModuel (a,b,s,o1,o2);
+module Adder_SubModuel_L2 (a,b,s,o1,o2);
   input a,b;
   input [3:0] s;
   output o1,o2;
