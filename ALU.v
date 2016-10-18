@@ -7,5 +7,6 @@ module ALU (a,b,M,Ci_inverse,P,Q,Co_inverse,Y,AequalsB);
   output P,Q,Co_inverse,AequalsB;
   output [3:0] Y;
 
-  Adder_SubModule_R alu = Adder_SubModule_R();
+  Adder_SubModuel2 left = Adder_SubModuel2();
+  Adder_SubModule_R right = Adder_SubModule_R();
 endmodule // Adder
