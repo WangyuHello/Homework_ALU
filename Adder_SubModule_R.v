@@ -23,7 +23,7 @@ module Adder_SubModule_R (p,g,M,Ci_inverse,Co_inverse,P,Q,Y,AequalsB);
 
   assign Q = t[3];
   assign temp_co_inverse = ~(p[3]&p[2]&p[1]&p[0]&Ci_inverse);
-  assign Co_inverse = (~temp_co_inverse)|(~t[3])
+  assign Co_inverse = (~temp_co_inverse)|(~t[3]);
 
   assign AequalsB = Y[2]&Y[3]&Y[1]&Y[0];
 
