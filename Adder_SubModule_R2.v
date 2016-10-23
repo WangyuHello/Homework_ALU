@@ -28,7 +28,7 @@ module Adder_SubModule_R2 (Ci_inverse,M_inverse,p,g,o);
   assign o[3] = ~(g[3]|w31|w32|w33);
   assign o[2] = ~(w21|w22|w23|w24);
   assign o[1] = ~(w11|w12|w13);
-  assign o[0] = ~(w01|w02;
+  assign o[0] = ~(w01|w02);
 
 endmodule // Adder_SubModule_R2
 //Another part of adder
