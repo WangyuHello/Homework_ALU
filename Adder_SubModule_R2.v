@@ -9,10 +9,26 @@ module Adder_SubModule_R2 (Ci_inverse,M_inverse,p,g,o);
   wire w11,w12,w13;
   wire w01,w02;
 
-  assign o[3] = ~(g[3]|(g[2]&p[3])|(g[1]&p[3]&p[2])|(g[0]&p[3]&p[2]&p[1]));
-  assign o[2] = ~((p[2]&p[1]&p[0]&Ci_inverse&M_inverse)|(g[2]&M_inverse)|(p[2]&g[1]&M_inverse)|(p[2]&p[1]&g[0]&M_inverse));
-  assign o[1] = ~((p[1]&p[0]&Ci_inverse&M_inverse)|(g[1]&M_inverse)|(p[1]&g[0]&M_inverse));
-  assign o[0] = ~((p[0]&Ci_inverse&M_inverse)|(g[0]&M_inverse));
+  assign w31 = g[2]&p[3];
+  assign w32 = g[1]&p[3]&p[2];
+  assign w33 = g[0]&p[3]&p[2]&p[1];
+
+  assign w21 = p[2]&p[1]&p[0]&Ci_inverse&M_inverse;
+  assign w22 = g[2]&M_inverse;
+  assign w23 = p[2]&g[1]&M_inverse;
+  assign w24 = p[2]&p[1]&g[0]&M_inverse;
+
+  assign w11 = p[1]&p[0]&Ci_inverse&M_inverse;
+  assign w12 = g[1]&M_inverse;
+  assign w13 = p[1]&g[0]&M_inverse;
+
+  assign w01 = p[0]&Ci_inverse&M_inverse;
+  assign w02 = g[0]&M_inverse;
+
+  assign o[3] = ~(g[3]|w31|w32|w33);
+  assign o[2] = ~(w21|w22|w23|w24);
+  assign o[1] = ~(w11|w12|w13);
+  assign o[0] = ~(w01|w02;
 
 endmodule // Adder_SubModule_R2
 //Another part of adder
