@@ -6,6 +6,6 @@ module Adder_SubModule_R1 (i1,i2,i3,o);
 
   assign temp = (i1&(~i2));
 
-  assign o = temp ^ i3;
-  
+  assign o = temp^i3;
+
 endmodule // Adder_SubModule_R1
