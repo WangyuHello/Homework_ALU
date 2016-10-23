@@ -1,9 +1,9 @@
 module Adder_SubModule_R (p,g,M,Ci_inverse,Co_inverse,P,Q,Y,AequalsB);
   input [3:0] p;
   input [3:0] g;
-  input Ci_inverse,M,Co_inverse;
+  input Ci_inverse,M;
 
-  output P,Q,AequalsB;
+  output P,Q,AequalsB,Co_inverse;
   output [3:0] Y;
 
   wire M_inverse;
