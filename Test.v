@@ -11,8 +11,7 @@ module test ();
 
   ALU alu(a_in,b_in,s_in,M_in,Ci_inverse_in,P_out,Q_out,Co_inverse_out,Y_out,AequalsB_out);
 
-  integer i,j,k,l,m,n;
-
+  integer i,j,k,l,m;
   initial begin
     a_in = 4'b0000;
     b_in = 4'b0000;
@@ -38,7 +37,7 @@ module test ();
                       s_in = k;
                       M_in = j;
                       Ci_inverse_in = i;
-                      $display($time,,"a_in=%b,b_in=%b,s_in=%b,M_in=%b,Ci_inverse_in=%b    Y_out=%b,P_out=%b,Q_out=%b,Co_inverse_out=%b,AequalsB_out=%b",a_in,b_in,s_in,M_in,Ci_inverse_in,Y_out,P_out,Q_out,Co_inverse_out,AequalsB_out);
+                      #10 $display($time,,"a_in=%b,b_in=%b,s_in=%b,M_in=%b,Ci_inverse_in=%b    Y_out=%b,P_out=%b,Q_out=%b,Co_inverse_out=%b,AequalsB_out=%b",a_in,b_in,s_in,M_in,Ci_inverse_in,Y_out,P_out,Q_out,Co_inverse_out,AequalsB_out);
                     end
                 end
               end
