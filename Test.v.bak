@@ -14,15 +14,15 @@ module test ();
   integer i,j,k,l,m,n;
 
   initial begin
-    a_in = 4'b0000;
-    b_in = 4'b0000;
-    s_in = 4'b0000;
+    a_in = 4'b0110;
+    b_in = 4'b0101;
+    s_in = 4'b1001;
     M_in = 1'b0;
-    Ci_inverse_in = 1'b0;
+    Ci_inverse_in = 1'b1;
   end
 
-
-  initial begin
+/*
+  always begin
     for (i=0;i<2;i=i+1)
       begin
         for(j=0;j<2;j=j+1)
@@ -46,7 +46,7 @@ module test ();
       end
   end
 
-
+*/
 
 
 
