@@ -14,8 +14,8 @@ module AccuTest ();
     reset_in = 1'b0;
   end
 
-  always @ (posedge wire) begin
-    
+  always @ (posedge clk) begin
+
   end
 
 endmodule // AccuTest
