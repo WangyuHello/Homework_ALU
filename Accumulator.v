@@ -4,6 +4,7 @@ module Accumulator ();
   reg Ci_inverse_in,M_in;
   wire AequalsB_o,P_o,Q_o,Co_inverse_o;
   wire [3:0] Y_o;
+  reg [3:0] YY;
 
   reg clk;
   reg reset;
@@ -19,9 +20,16 @@ module Accumulator ();
 
     clk = 1;
     reset = 0;
-    forever #100 clk = ~clk;
-    forever #1000 reset = ~reset;
+
   end
+
+  always begin
+    #100 clk = ~clk;
+  end
+
+  // always begin
+  //   #2000 reset = ~reset;
+  // end
 
   always @ (posedge clk or reset) begin
 
@@ -29,6 +37,8 @@ module Accumulator ();
     temp[1] = Y_o[1]&(~reset);
     temp[2] = Y_o[2]&(~reset);
     temp[3] = Y_o[3]&(~reset);
+
+    YY = temp;
 
   end
 
