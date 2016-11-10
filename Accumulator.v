@@ -12,24 +12,12 @@ module Accumulator (step,reset,clk,Yo);
   ALU alu(.a(step),.b(temp),.s(mode),.M(M_in),.Ci_inverse(Ci_inverse_in),.P(P_o),.Q(Q_o),.Co_inverse(Co_inverse_o),.Y(Y_o),.AequalsB(AequalsB_o));
 
   initial begin
-    step = 4'b0001;
     temp = 4'b0000;
     mode = 4'b1001;
     M_in = 0;
     Ci_inverse_in = 1;
-
-    clk = 1;
-    reset = 0;
-
   end
 
-  always begin
-    #100 clk = ~clk;
-  end
-
-  // always begin
-  //   #2000 reset = ~reset;
-  // end
 
   always @ (posedge clk or reset) begin
 
