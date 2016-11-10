@@ -27,7 +27,7 @@ module Accumulator (step,reset,clk,Yo);
     temp[3] = Y_o[3]&(~reset);
 
     YY = temp;
-
+    Yo = temp;
   end
 
 
