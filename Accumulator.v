@@ -1,13 +1,13 @@
-`timescale 1ns / 10ps
-module Accumulator ();
-  reg [3:0] step,temp,mode;
+module Accumulator (step,reset,clk,Yo);
+  input [3:0] step;
+  input clk,reset;
+  reg [3:0] temp,mode;
   reg Ci_inverse_in,M_in;
   wire AequalsB_o,P_o,Q_o,Co_inverse_o;
   wire [3:0] Y_o;
   reg [3:0] YY;
 
-  reg clk;
-  reg reset;
+  output [3:0] Yo;
 
   ALU alu(.a(step),.b(temp),.s(mode),.M(M_in),.Ci_inverse(Ci_inverse_in),.P(P_o),.Q(Q_o),.Co_inverse(Co_inverse_o),.Y(Y_o),.AequalsB(AequalsB_o));
 
